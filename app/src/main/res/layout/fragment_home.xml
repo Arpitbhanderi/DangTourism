@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_activity_bg"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/explore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="61dp"
+        android:fontFamily="@font/philosopher"
+        android:text="@string/explore"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sights_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/philosopher"
+
+        android:text="@string/sights"
+        android:textColor="@color/text_selected"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/explore"
+        app:layout_constraintTop_toBottomOf="@+id/guideline10" />
+
+    <ImageView
+        android:id="@+id/sights_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        app:layout_constraintEnd_toEndOf="@+id/sights_btn"
+        app:layout_constraintStart_toStartOf="@+id/sights_btn"
+        app:layout_constraintTop_toBottomOf="@id/sights_btn" />
+
+    <TextView
+        android:id="@+id/waterfalls_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+
+        android:fontFamily="@font/philosopher"
+        android:text="Waterfalls"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/sights_btn"
+        app:layout_constraintTop_toTopOf="@+id/sights_btn"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/waterfalls_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/waterfalls_btn"
+        app:layout_constraintStart_toStartOf="@+id/waterfalls_btn"
+        app:layout_constraintTop_toBottomOf="@id/waterfalls_btn" />
+
+    <TextView
+        android:id="@+id/adventure_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/philosopher"
+
+        android:text="@string/adventure"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/waterfalls_btn"
+        app:layout_constraintTop_toTopOf="@+id/waterfalls_btn" />
+
+    <ImageView
+        android:id="@+id/adventure_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/adventure_btn"
+        app:layout_constraintStart_toStartOf="@+id/adventure_btn"
+        app:layout_constraintTop_toBottomOf="@id/adventure_btn" />
+
+
+    <TextView
+        android:id="@+id/selected_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/philosopher"
+        android:text="-- Sights"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/viewall_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/philosopher"
+        android:text="View all"
+        android:textColor="#9B9EA7"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/selected_item"
+        app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+        <LinearLayout
+            android:id="@+id/sights_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/botanical_garden"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        tools:ignore="ContentDescription" />
+
+
+                    <RatingBar
+                        android:id="@+id/item_rating"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.5"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/place_name"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_in_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.5"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/item_rating"
+                        app:layout_constraintStart_toEndOf="@+id/item_rating" />
+
+                    <TextView
+                        android:id="@+id/place_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Botanical Garden"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/place_location"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/place_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Waghai"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:elevation="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/saputara_hillstation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/item_rating2"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.5"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/place_name2"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_in_txt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.5"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/item_rating2"
+                        app:layout_constraintStart_toEndOf="@+id/item_rating2" />
+
+                    <TextView
+                        android:id="@+id/place_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Saputara Hill Station"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/place_location2"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/place_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Saputara"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:adSize="MEDIUM_RECTANGLE"
+                    app:adUnitId="@string/adv_banner_UnitId"></com.google.android.gms.ads.AdView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/shabari_dham"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/item_rating3"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.4"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/place_name3"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_in_txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.4"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/item_rating3"
+                        app:layout_constraintStart_toEndOf="@+id/item_rating3" />
+
+                    <TextView
+                        android:id="@+id/place_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Shabari Dham"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/place_location3"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/place_location3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Mokhamal"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Purna_Wildlife_Sanctuary"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/item_rating4"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.3"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/place_name4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_in_txt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.3"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/item_rating4"
+                        app:layout_constraintStart_toEndOf="@+id/item_rating4" />
+
+                    <TextView
+                        android:id="@+id/place_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Purna Wildlife Sanctuary"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/place_location4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/place_location4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Jamlapada"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Don_Hill_Station"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/item_rating5"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.4"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/place_name5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_in_txt5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.4"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/item_rating5"
+                        app:layout_constraintStart_toEndOf="@+id/item_rating5" />
+
+                    <TextView
+                        android:id="@+id/place_name5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Don Hill Station"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/place_location5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/place_location5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Don"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/selected_item"
+        app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+        <LinearLayout
+            android:id="@+id/waterfalls_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/Gira_Dhodh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+                    <RatingBar
+                        android:id="@+id/Gira_item_rating"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.5"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/Gira_place_name"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Gira_rating_in_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.5"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/Gira_item_rating"
+                        app:layout_constraintStart_toEndOf="@+id/Gira_item_rating" />
+
+                    <TextView
+                        android:id="@+id/Gira_place_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Gira Dhodh"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Gira_place_location"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Gira_place_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Waghai"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:adSize="MEDIUM_RECTANGLE"
+                    app:adUnitId="@string/adv_banner_UnitId" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/shivghat_waterfall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/shivghat_item_rating3"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.5"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/shivghat_place_name3"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/shivghat_rating_in_txt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.5"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/shivghat_item_rating3"
+                        app:layout_constraintStart_toEndOf="@+id/shivghat_item_rating3" />
+
+                    <TextView
+                        android:id="@+id/shivghat_place_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Shivghat Waterfall"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/shivghat_place_location3"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/shivghat_place_location3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Nilsakiya"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Bhigu_waterfall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/Bhigu_item_rating4"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.4"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/Bhigu_place_name4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Bhigu_rating_in_txt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.4"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/Bhigu_item_rating4"
+                        app:layout_constraintStart_toEndOf="@+id/Bhigu_item_rating4" />
+
+                    <TextView
+                        android:id="@+id/Bhigu_place_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Bhigu waterfall"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Bhigu_place_location4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Bhigu_place_location4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Kusmal"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/selected_item"
+        app:layout_constraintTop_toTopOf="@+id/guideline8">
+
+        <LinearLayout
+            android:id="@+id/adventure_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/Dangjilla_Paragliding"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+                    <RatingBar
+                        android:id="@+id/Dangjilla_Paragliding_rating"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.4"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/Dangjilla_Paragliding_name"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Dangjilla_Paragliding_in_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.4"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/Dangjilla_Paragliding_rating"
+                        app:layout_constraintStart_toEndOf="@+id/Dangjilla_Paragliding_rating" />
+
+                    <TextView
+                        android:id="@+id/Dangjilla_Paragliding_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="DangJilla Paragliding"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Dangjilla_Paragliding_location"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Dangjilla_Paragliding_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Saputara"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:elevation="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Vansda_National_Park"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/Vansda_National_Park_item_rating2"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.2"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/Vansda_National_Park_place_name2"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Vansda_National_Park_rating_in_txt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.2"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/Vansda_National_Park_item_rating2"
+                        app:layout_constraintStart_toEndOf="@+id/Vansda_National_Park_item_rating2" />
+
+                    <TextView
+                        android:id="@+id/Vansda_National_Park_place_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Vansda National Park"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Vansda_National_Park_place_location2"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Vansda_National_Park_place_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Vansda"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:adSize="MEDIUM_RECTANGLE"
+                    app:adUnitId="@string/adv_banner_UnitId"></com.google.android.gms.ads.AdView>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_height="330dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="240dp"
+                    android:layout_height="330dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/Saputara_Boating"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black" />
+
+
+                    <RatingBar
+                        android:id="@+id/Saputara_Boating_item_rating4"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="13dp"
+                        android:isIndicator="true"
+                        android:max="5"
+                        android:rating="4.3"
+                        android:theme="@style/RatingBar"
+                        app:layout_constraintBottom_toTopOf="@+id/Saputara_Boating_place_name4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Saputara_Boating_rating_in_txt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="4.3"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/Saputara_Boating_item_rating4"
+                        app:layout_constraintStart_toEndOf="@+id/Saputara_Boating_item_rating4" />
+
+                    <TextView
+                        android:id="@+id/Saputara_Boating_place_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Mahal Camp Site"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/Saputara_Boating_place_location4"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Saputara_Boating_place_location4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginBottom="21dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Diwan Tembrun"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <TextView
+        android:id="@+id/categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Categories"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView3"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:scrollbars="none"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/camp_btn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/categories_shape">
+
+                <ImageView
+                    android:layout_width="46dp"
+                    android:layout_height="31dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/camping" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="67dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/philosopher"
+                    android:text="Camp"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/hotel_btn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/categories_shape">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="31dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="9dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/hotel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="67dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/philosopher"
+                    android:text="Hotel"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/restaurant_btn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/categories_shape">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="31dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/restaurant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/philosopher"
+                    android:text="Restaurant"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

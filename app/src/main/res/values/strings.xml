@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Dang Tourism</string>
+    <string name="login">Login</string>
+
+    <string name="or_login_with">New to DangTourism?</string>
+    <string-array name="numbers">
+        <item>Sights</item>
+        <item>Waterfalls</item>
+        <item>Adventures</item>
+        <item>Camps</item>
+        <item>Hotels</item>
+        <item>Restaurants</item>
+    </string-array>
+
+    <string name="adv_banner_UnitId">ca-app-pub-7967640087299394/9866922555</string>
+    <string name="adv_Interstitial_UnitId">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="explore">Explore</string>
+    <string name="sights">Sights</string>
+    <string name="adventure">Adventure</string>
+
+</resources>

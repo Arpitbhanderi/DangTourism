@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/login_activity_bg"
+    tools:context=".SavedFragment">
+
+    <TextView
+        android:id="@+id/saved_place_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="54dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Saved Place"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Saved"
+        android:textColor="@color/text_selected"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/saved_place_txt"
+        app:layout_constraintTop_toBottomOf="@+id/saved_place_txt" />
+
+    <ImageView
+        android:id="@+id/list_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        app:layout_constraintEnd_toEndOf="@+id/list_btn"
+        app:layout_constraintStart_toStartOf="@+id/list_btn"
+        app:layout_constraintTop_toBottomOf="@id/list_btn" />
+
+    <TextView
+        android:id="@+id/reservations_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Reservations"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/list_btn"
+        app:layout_constraintTop_toTopOf="@+id/list_btn" />
+
+    <ImageView
+        android:id="@+id/reservations_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/reservations_btn"
+        app:layout_constraintStart_toStartOf="@+id/reservations_btn"
+        app:layout_constraintTop_toBottomOf="@id/reservations_btn" />
+
+    <TextView
+        android:id="@+id/visited_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/philosopher"
+        android:text="Visited"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/reservations_btn"
+        app:layout_constraintTop_toTopOf="@+id/reservations_btn" />
+
+    <ImageView
+        android:id="@+id/visited_selected"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_item_selected"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/visited_btn"
+        app:layout_constraintStart_toStartOf="@+id/visited_btn"
+        app:layout_constraintTop_toBottomOf="@id/visited_btn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firestore_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline6">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/firestore_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firestore_list_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline6">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/firestore_list2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firestore_list_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline6">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/philosopher"
+            android:text="Empty"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

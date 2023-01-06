@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "593521268482",
+    "project_id": "dangtourism-ceda0",
+    "storage_bucket": "dangtourism-ceda0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593521268482:android:9d1cb5da36e87f41f9541b",
+        "android_client_info": {
+          "package_name": "com.madeiteasy.dangtorisum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593521268482-od5se1s18d0227m2q6gjtps4sl4pkv1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madeiteasy.dangtorisum",
+            "certificate_hash": "f79547b99d42b37d3b565bbe24fdc4c3743a4ad4"
+          }
+        },
+        {
+          "client_id": "593521268482-1g3oelp6depceinfveje2tonp8aq241h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWl73o01r48bYcRj_PxAWWcsXzF7X8mAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593521268482-1g3oelp6depceinfveje2tonp8aq241h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
