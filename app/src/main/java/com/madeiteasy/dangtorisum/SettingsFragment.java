@@ -1,5 +1,6 @@
 package com.madeiteasy.dangtorisum;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 
 
 public class SettingsFragment extends Fragment {
-    Button log_out, reset;
+    Button log_out, reset, chat_btn;
     CardView beautiful_dang_btn, exploring_dang_btn, soul_travelers_btn;
     ImageView backbtn, savebtn;
     ConstraintLayout mainlayout, accountlayout;
@@ -44,6 +45,7 @@ public class SettingsFragment extends Fragment {
     }
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,7 +56,8 @@ public class SettingsFragment extends Fragment {
 
         log_out = (Button) view.findViewById(R.id.Log_out);
         reset = (Button) view.findViewById(R.id.reset_password);
-
+chat_btn = (Button) view.findViewById(R.id.chat_btn);
+        
         beautiful_dang_btn = (CardView) view.findViewById(R.id.beautiful_dang_cardView);
         exploring_dang_btn = (CardView) view.findViewById(R.id.exploring_dang_cardView);
         soul_travelers_btn = (CardView) view.findViewById(R.id.soul_travelers_cardView);
@@ -70,6 +73,8 @@ public class SettingsFragment extends Fragment {
         terms_and_services_layer = (LinearLayout) view.findViewById(R.id.terms_and_services_layer);
         contact_us_layer = (LinearLayout) view.findViewById(R.id.contact_us_layer);
         admin_area = (LinearLayout) view.findViewById(R.id.Admin_area);
+        
+        
 
 
         showemail(view);
@@ -107,6 +112,13 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        chat_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), ChatActivity.class);
+                startActivity(i);
+            }
+        });
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
